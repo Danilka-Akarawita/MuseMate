@@ -1,2 +1,2 @@
 # MuseMate
-MuseMate is a music studio booking system designed to simplify the process of scheduling and managing practice sessions. This software solution provides an easy-to-use interface for both studio owners and musicians to book and manage their practice sessions.
+MuseMate is a music studio booking system designed to simplify the process of scheduling and managing practice sessions.
