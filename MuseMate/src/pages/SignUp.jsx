@@ -20,7 +20,7 @@ export default function SignUp() {
  
     return (
       <div className="p-8 flex flex-col justify-around">
-        <div className="form p-4">
+        <div className="form p-4 ">
           
           <input
             type="text"
@@ -60,7 +60,7 @@ export default function SignUp() {
               Sign Up
             </button>
             <button
-              className="font-bold text-white"
+              className="font-bold text-black"
              
             >
               G
