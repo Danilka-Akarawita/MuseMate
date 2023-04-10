@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import './NavbarStyles.css';
+import { NavLink } from "react-router-dom";
 
 
 export default function Navbar() {
@@ -21,6 +22,9 @@ export default function Navbar() {
             <a href="#">Home</a>
             <a href="#">About</a>
            <a href="#">Contact</a>
+           <NavLink to="/signup">
+          <h1>SignUp</h1>
+           </NavLink>
           <button
               className="nav-btn nav-close-btn"
               onClick={showNavbar}>
