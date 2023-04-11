@@ -1,4 +1,4 @@
-import { app } from "./init";
+import{app} from './init';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -11,7 +11,7 @@ import {
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export const signupAuth = async (username,password,email,mobile) => {
+export const signupAuth = async (email,password,mobile) => {
   try {
     const userCredentials = await createUserWithEmailAndPassword(
       auth,
