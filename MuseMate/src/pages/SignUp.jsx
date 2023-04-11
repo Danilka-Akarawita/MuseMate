@@ -30,15 +30,16 @@ export default function SignUp() {
   const handleGoogleSignIn = () => {
     googleSignIn();
   };
+  const inputStyle="p-2 my-4 border border-grey-500 p-2 rounded-lg"
  
     return (
-      <div className="p-8 flex flex-col justify-around">
+      <div className="flex justify-center items-center p-8 flex flex-col justify-around bg-gray-300 p-4 rounded-lg">
         <div className="form p-4 ">
           
           <input
             type="text"
             placeholder="username"
-            className="p-2 my-4"
+            className={inputStyle}
             name="username"
             value={formData.username}
             onChange={handleFormChange}
@@ -46,15 +47,15 @@ export default function SignUp() {
           <input
             type="text"
             placeholder="mobile number"
-            className="p-2 my-4"
+            className={inputStyle}
             name="mobile"
             value={formData.mobile}
             onChange={handleFormChange}
           />
-          <input
+          <input 
             type="text"
             placeholder="email"
-            className="p-2 my-4"
+            className={inputStyle}
             name="email"
             value={formData.email}
             onChange={handleFormChange}
@@ -62,19 +63,19 @@ export default function SignUp() {
           <input
             type="text"
             placeholder="password"
-            className="p-2 my-4"
+            className={inputStyle}
             name="password"
             value={formData.password}
             onChange={handleFormChange}
           />
-          <div className="flex flex-col justify-between items-center ">
+          <div className="flex flex-row  items-center ">
             {/* <h2 className="text-red-600">{error}</h2> */}
-            <button className="m-4" onClick={handleSignUp} >
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold m-4 py-2 px-4 rounded-lg" onClick={handleSignUp} >
               Sign Up
             </button>
             <button
-              className="font-bold text-black" onClick={googleSignIn} >
-              G-SignUp
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold m-4 py-2 px-2 rounded-lg" onClick={handleGoogleSignIn} >
+              Google
             </button>
           </div>
         </div>
