@@ -12,7 +12,7 @@ export default function StudioSection() {
           <div className="description">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <div className="  space-x-4 mt-4 justify-center  flex flex-row">
-            <NavLink to="/signup">
+            <NavLink to="/book">
                 <p>Book!</p>
            </NavLink>
            <NavLink to="/signup">

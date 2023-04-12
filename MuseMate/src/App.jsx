@@ -6,6 +6,7 @@ import SignUp from './pages/SignUp';
 import "aos/dist/aos.css";
 
 import AOS from 'aos'
+import Booking from './pages/Booking';
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/book" element={<Booking />} />
       </Routes>
     </Router>
     </>
