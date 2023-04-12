@@ -10,9 +10,9 @@ export default function Home() {
     <>
    <Navbar/>
    
-   <div className=" m-16">
-   <div className="font-lemon text-5xl ">MuseMate</div>
-    <div className="font-lemon  ">Make musical bookings a breeze with MuseMate</div>
+   <div  className=" flex flex-col items-center  justify-center  h-screen m-16">
+   <div data-aos="zoom-in-up" className="font-lemon text-5xl ">MuseMate</div>
+    <div data-aos="zoom-in-up" className="font-lemon  ">Make musical bookings a breeze with MuseMate</div>
     </div>
     <StudioSection/>
     

@@ -7,7 +7,7 @@ export default function StudioSection() {
   return (
     <div className="ui-card">
         <img
-         className="m-4 object-cover rounded-lg"
+         data-aos="zoom-in-up" className="m-4 object-cover rounded-lg"
           src='./images/Mic.png' alt='Studio 1'></img>
           <div className="description">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
