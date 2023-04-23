@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import './NavbarStyles.css';
 import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 
 export default function Navbar() {
@@ -16,14 +17,14 @@ export default function Navbar() {
   return (
     
     <header>
-      <h3>Logo</h3>
+      <Link to="/">Logo</Link>
         <nav ref={navRef}>
           
-            <a href="#">Home</a>
-            <a href="#">About</a>
-           <a href="#">Contact</a>
+            <Link to="/">Home</Link>
+            <Link>About</Link>
+            <Link>Contact</Link>
            <NavLink to="/signup">
-          <h1>SignUp</h1>
+            <Link>SignUp</Link>
            </NavLink>
           <button
               className="nav-btn nav-close-btn"
