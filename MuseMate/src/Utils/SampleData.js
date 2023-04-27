@@ -12,7 +12,7 @@ export const sample_data = [
     description: "A space where musicians can relax and work on their music in a comfortable environment",
     chargePerHr: "2500",
     instruments: [
-      {
+      {  
         itemName: "Keyboard",
         itemCount: 2,
         itemModel: "Motif",

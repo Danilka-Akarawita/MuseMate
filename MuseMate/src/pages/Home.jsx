@@ -6,6 +6,7 @@ import Booking from './Booking'
 import { Box, Container, Stack, Typography } from '@mui/material'
 
 import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 import StudioHolder from '../components/StudioHolder'
 
 
@@ -19,6 +20,8 @@ export default function Home() {
       </Stack>
 
       {/* <StudioSection/> */}
+      <Footer/>
     </Box>
+    
   );
 }

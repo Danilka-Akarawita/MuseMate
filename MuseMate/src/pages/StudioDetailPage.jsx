@@ -50,9 +50,9 @@ const StudioDetailPage = () => {
               <Typography variant="h6">{newdata.description}</Typography>
               <Typography variant='h6'>Instruments</Typography>
               <ul style={{marginLeft:"30px"}}>
-                {(newdata.instruments).map((item)=>(
+                {/* {(newdata.instruments).map((item)=>(
                     <li>{item.itemName}</li>
-                ))}
+                ))} */}
               </ul>
             </CardContent>
             <CardActions>
@@ -63,9 +63,9 @@ const StudioDetailPage = () => {
       </Stack>
       <Stack width="100%" height="100%" direction="row" justifyContent="space-around" alignItems="center" flexWrap="wrap" gap={2}>
         {
-            (newdata.instruments).map((item)=>(
-                <InstrumentCard instrument={item}/>
-            ))
+            // (newdata.instruments).map((item)=>(
+            //     <InstrumentCard instrument={item}/>
+            // ))
         }
             
       </Stack>
