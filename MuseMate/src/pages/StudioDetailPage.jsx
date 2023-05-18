@@ -1,9 +1,10 @@
-import { Box, Button, Card, CardActions, CardContent, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, Stack, Typography,TextField } from '@mui/material'
 import React, { useState } from 'react';
 import {  useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import studioSample from '../assets/herostudio.jpg';
 import { sample_data } from '../Utils/SampleData';
+import {feedback} from '../controllers/controller'
 import InstrumentCard from '../components/InstrumentCard';
 
 const StudioDetailPage = () => {
@@ -11,7 +12,8 @@ const StudioDetailPage = () => {
     const {id}=useParams();
     
     const [newdata,setnewData]=useState(sample_data[id-1]);
-
+   const[feedbackData,setFeedbackData]=useState("");
+   const [error,setError]=useState(null);
     
 
     useEffect(()=>{
@@ -29,14 +31,28 @@ const StudioDetailPage = () => {
     },[id,newdata])
 
 
+    const handlefeedbacks = async () => {
+      try {
+        const user = await feedback(feedbackData);
+        
+        if (user) {
+          console.log(user);
+          setFeedbackData("");
+        } else {
+          setError("Invalid data ");
+        }
+      } catch (e) {
+        setError(e.message);
+      }
+    };
 
   return (
-    <Stack direction="column" height="97vh" border="2px solid red">
+    <Stack direction="column" height="90vh" >
       <Stack
         gap={10}
         sx={{ flexDirection: { sx: "column", md: "row" } }}
         height="100%"
-        border="2px solid red"
+       
         alignItems="center"
         justifyContent="center"
       >
@@ -61,15 +77,29 @@ const StudioDetailPage = () => {
           </Card>
         </Box>
       </Stack>
-      <Stack width="100%" height="100%" direction="row" justifyContent="space-around" alignItems="center" flexWrap="wrap" gap={2}>
-        {
-            // (newdata.instruments).map((item)=>(
-            //     <InstrumentCard instrument={item}/>
-            // ))
-        }
-            
-      </Stack>
+      
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+      
+      <TextField
+        label="Textarea"
+        multiline
+        rows={4}
+        variant="outlined"
+        fullWidth
+        value={feedbackData} 
+          onChange={(e) => setFeedbackData(e.target.value)}
+      />
+      <Button variant="contained" color="primary" onClick={handlefeedbacks} >
+        Add
+      </Button>
+    </Box>
+    
+      
+     
+      
     </Stack>
+   
+    
   );
 }
 

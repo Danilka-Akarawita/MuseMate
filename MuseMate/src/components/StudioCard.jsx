@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Stack, Typography } from '@mui/material'
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import studio404 from '../assets/studio404.jpg';
 
 
 const StudioCard = ({data}) => {
 
-    const navigate=useNavigate();
+   
 
   return (
     <Box width="350px">
@@ -27,7 +27,10 @@ const StudioCard = ({data}) => {
           </Typography>
         </CardContent>
         <CardActions sx={{backgroundColor:"#E3CCAE"}}>
-          <Button onClick={()=>navigate(`/studioDetails/${data.id}`)}>Book Now</Button>
+          
+          <NavLink to={`/details/${data.id}`}>
+              <Button>Visit !</Button>
+          </NavLink>
         </CardActions>
       </Card>
     </Box>

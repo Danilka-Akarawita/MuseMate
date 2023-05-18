@@ -1,71 +1,70 @@
+import {  TextField,Box,Button  } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import { makeStyles } from '@mui/styles';
 
 
 
 
 export default function Booking() {
   
-
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    studio: "",
-    date: "",
-    timeslot:""
-  });
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
  
 
-  const inputStyle="p-2 my-4 border border-grey-500 p-2 rounded-lg"
+
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop:'20px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  textField: {
+   // marginBottom: theme.spacing(1)
+   marginBottom:'20px'
+    
+  }
+}));
+  
+
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   mobile: "",
+  //   studio: "",
+  //   date: "",
+  //   timeslot:""
+  // });
+  // const handleFormChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
+
+  
+  const classes = useStyles();
  
     return (
-      <div className="flex justify-center items-center p-8 flex flex-col justify-around bg-gray-300 p-4 rounded-lg">
-        <div className="form p-4 ">
-          
-          <input
-            type="text"
-            placeholder="Name"
-            className={inputStyle}
-            name="name"
-            value={formData.username}
-            onChange={handleFormChange}
-          />
-          <input
-            type="text"
-            placeholder="mobile number"
-            className={inputStyle}
-            name="mobile"
-            value={formData.mobile}
-            onChange={handleFormChange}
-          />
-          
-          <input
-            type="text"
-            placeholder="Studio"
-            className={inputStyle}
-            name="studio"
-            
-          />
-          <input 
-          type="date" 
-          className={inputStyle}
-          name="date"
-          value={formData.date}
-          onChange={handleFormChange}
-           />
-          <div className="flex flex-row  items-center ">
-            {/* <h2 className="text-red-600">{error}</h2> */}
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold m-4 py-2 px-4 rounded-lg"  >
-              Proceed
-            </button>
-            
-          </div>
-        </div>
-      </div>
+   
+    
+      
+      <Box className={classes.container}>
+        <form  className={classes.form}>
+          <TextField className={classes.textField} label="ClientName" variant="outlined" />
+          <TextField className={classes.textField} label="StudioName" variant="outlined" />
+          <TextField type="date" className={classes.textField} label="StudioName" variant="outlined" />
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
+
+        
+        </form>
+      </Box>
+
+         
     );
   }
 
