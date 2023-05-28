@@ -1,4 +1,4 @@
-import {  TextField,Box,Button  } from "@mui/material";
+import {  Grid, TextField, Button, Card, CardContent, Typography,MenuItem   } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { makeStyles } from '@mui/styles';
@@ -6,64 +6,70 @@ import { makeStyles } from '@mui/styles';
 
 
 
+
 export default function Booking() {
-  
- 
 
-
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop:'20px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  textField: {
-   // marginBottom: theme.spacing(1)
-   marginBottom:'20px'
-    
-  }
-}));
-  
-
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   mobile: "",
-  //   studio: "",
-  //   date: "",
-  //   timeslot:""
-  // });
-  // const handleFormChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
-
-  
-  const classes = useStyles();
- 
     return (
    
     
-      
-      <Box className={classes.container}>
-        <form  className={classes.form}>
-          <TextField className={classes.textField} label="ClientName" variant="outlined" />
-          <TextField className={classes.textField} label="StudioName" variant="outlined" />
-          <TextField type="date" className={classes.textField} label="StudioName" variant="outlined" />
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
+      <div className="App"> 
+      <Typography gutterBottom variant="h3" align="center">
+        museMate
+       </Typography>
+      <Grid>
+        <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
+          <CardContent>
+            
+            <Typography variant="body2" color="textSecondary" component="p" gutterBottom>
+              Fill up the form to book your studio
+          </Typography> 
+            <form>
+              <Grid container spacing={1}>
+                <Grid xs={12} sm={6} item>
+                  <TextField placeholder="Enter first name" label="First Name" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid xs={12} sm={6} item>
+                  <TextField placeholder="Enter last name" label="Last Name" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField type="date"  label="Date" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid item xs={12} sm={6} >
+                  <TextField type="time"   variant="outlined" fullWidth required>
+                    <MenuItem value="am">am</MenuItem>
+                    <MenuItem value="pm">pm</MenuItem>
+                    </TextField>
+                </Grid>
+                <Grid xs={12} sm={6} item>
+                <TextField type="time"   variant="outlined" fullWidth required>
+                  <MenuItem value="am">am</MenuItem>
+                  <MenuItem value="pm">pm</MenuItem>
+                  </TextField>
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField type="text" label="cost" variant="outlined" fullWidth required />
+                </Grid>
 
-        
-        </form>
-      </Box>
+                
+                <Grid item xs={12}>
+                  <TextField type="text" placeholder="Enter phone number" label="Phone" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField label="Message" multiline rows={4} placeholder="Type your message here" variant="outlined" fullWidth required />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button type="submit" variant="contained" color="primary" fullWidth>Submit</Button>
+                </Grid>
 
+              </Grid>
+            </form>
+          </CardContent>
+        </Card>
+      </Grid>
+    </div>
          
     );
   }
